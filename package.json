@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "node buildScripts/startMessage.js",
+    "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel open:src",
-    "open:src": "node buildScripts/srcScriptFile.js",
+    "open:src": "babel-node buildScripts/srcScriptFile.js",
     "localtunnel": "lt --port 5000",
     "share": "npm-run-all --parallel open:src localtunnel"
   },

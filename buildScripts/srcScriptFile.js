@@ -1,6 +1,6 @@
-let express = require('express');
-let path = require('path');
-let open = require('open');
+import path from 'path';
+import open from 'open';
+import express from 'express';
 let port = 5000;
 
 let app = express();
