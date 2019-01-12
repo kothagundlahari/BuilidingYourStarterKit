@@ -1,9 +1,17 @@
 import path from 'path';
 import open from 'open';
 import express from 'express';
-let port = 5000;
+import webpack from 'webpack';
+import config from '../webpack.config.babel';
+const port = 5000;
+const app = express();
+const compiler = webpack(config);
 
-let app = express();
+/* eslint-disable no-console */
+app.use(require('webpack-dev-middleware')(compiler, {
+   noInfo: true,
+   publicPath: config.output.publicPath
+}));
 
 app.get('/', (req, res) => {
    res.sendFile(path.join(__dirname, '../src/index.html'));
