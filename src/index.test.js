@@ -4,7 +4,7 @@ import {describe, it} from "eslint/lib/testers/event-generator-tester";
 
 describe('Our first Test', () => {
     it('true to be true', () => {
-        expect(true).to.equal(false);
+        expect(true).to.equal(2);
     } );
 
 });
